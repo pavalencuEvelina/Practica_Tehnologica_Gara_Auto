@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="Practica_Gara_Auto.WindowsFile.AdaugareCursa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Practica_Gara_Auto.WindowsFile"
+             mc:Ignorable="d" Height="656" Width="773">
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Titlu -->
+                <RowDefinition Height="Auto"/>
+                <!-- Formular -->
+                <RowDefinition Height="Auto"/>
+                <!-- Butoane -->
+                <RowDefinition Height="*"/>
+                <!-- Mesaje -->
+            </Grid.RowDefinitions>
+
+            <!-- Titlu -->
+            <TextBlock Grid.Row="0"
+                   Text="🚌 Adaugă Cursă Nouă"
+                   x:Name="titlu"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+            <!-- Formular: etichete + controale -->
+            <Grid Grid.Row="1" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Traseu -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- TipTransport -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Angajat -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Data Plecare -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Ora Plecare -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Checkbox Program -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Combo Program -->
+                </Grid.RowDefinitions>
+
+                <!-- 1. IDTraseu -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Text="Traseu:" Margin="0,5"
+                       FontSize="16"/>
+                <ComboBox x:Name="ComboTraseu"
+                      Grid.Row="0" Grid.Column="1"
+                      Margin="5,15"
+                      Height="35"
+                      Style="{StaticResource RoundedComboBoxStyle}"/>
+                <!-- Am scos DisplayMemberPath / SelectedValuePath -->
+
+                <!-- 2. IDTipTransport -->
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       Text="Tip transport:" Margin="0,5"/>
+                <ComboBox x:Name="ComboTipTransport"
+                      Grid.Row="1" Grid.Column="1"
+                      Margin="5,15"
+                      Height="35"
+                      Style="{StaticResource RoundedComboBoxStyle}"/>
+
+                <!-- 3. IDAngajat -->
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Text="Angajat (șofer):" Margin="0,5"
+                       FontSize="16"/>
+                <ComboBox x:Name="ComboAngajat"
+                      Grid.Row="2" Grid.Column="1"
+                      Margin="5,15"
+                      Height="35"
+                      Style="{StaticResource RoundedComboBoxStyle}"/>
+
+                <!-- 4. DataPlecare -->
+                <TextBlock Grid.Row="3" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Text="Data plecare:" Margin="0,5"
+                       FontSize="16"/>
+                <DatePicker x:Name="DatePickerDataPlecare"
+                        Grid.Row="3" Grid.Column="1"
+                            FontSize="14"
+                        Height="40"
+                        Margin="5,15"
+                        Style="{StaticResource RoundedDatePickerStyle}"/>
+
+                <!-- 5. OraPlecare -->
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Text="Ora plecare (HH:mm):" Margin="0,5"
+                       FontSize="16"/>
+                <TextBox x:Name="TextBoxOraPlecare"
+                     Grid.Row="4" Grid.Column="1"
+                     Margin="5,15"
+                     VerticalContentAlignment="Center"
+                     Height="35"
+                     ToolTip="Format: HH:mm, ex. 08:30"
+                     Style="{StaticResource RoundedTextBoxStyle}"/>
+
+                <!-- 6. Checkbox pentru Program -->
+               
+
+              
+            </Grid>
+
+            <!-- Butoanele “Salvează” și “Anulează” -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0" Width="600">
+                <Button Content="✔ Salvează"
+                    Cursor="Hand"
+                    Width="250"
+                    Height="45"
+                    Background="#4CAF50"
+                    Margin="0,0,80,0"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="BtnAdaugaCursa_Click"
+                    Style="{StaticResource RoundedButtonStyle}" />
+                <Button Content="✖ Anulează"
+                    Cursor="Hand"
+                    Width="250"
+                    Height="45"
+                    Background="#E53935"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Click="ButtonAnuleaza_Click"
+                    Style="{StaticResource RoundedButtonStyle}" />
+            </StackPanel>
+
+            <!-- Loc pentru mesaje de eroare/succes -->
+            <TextBlock x:Name="TextBlockFeedback"
+                   Grid.Row="3"
+                   Foreground="Red"
+                   FontWeight="Bold"
+                   Margin="0,10,0,0"
+                   TextWrapping="Wrap"/>
+        </Grid>
+</UserControl>

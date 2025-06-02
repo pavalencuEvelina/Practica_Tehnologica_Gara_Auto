@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/01/2025 17:30:00" ReportInfo.Modified="06/01/2025 17:30:00" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="CeleMaiSolicitateCurse" ReferenceName="CeleMaiSolicitateCurse" DataType="System.Data.DataTable" Enabled="true">
+      <Column Name="IDTraseu" DataType="System.Int32"/>
+      <Column Name="PunctPornire" DataType="System.String"/>
+      <Column Name="Destinatie" DataType="System.String"/>
+      <Column Name="NrRezervari" DataType="System.Int32"/>
+      <Column Name="Ora" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="TextTitle" Width="718.2" Height="37.8" Dock="Fill" Text="Cele Mai Solicitate Curse" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="24.0">
+      <TextObject Name="TextIDTraseu" Width="100" Height="24.0" Fill.Color="LightSkyBlue" Text="IDTraseu" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextPunctPornire" Left="100" Width="180" Height="24.0" Fill.Color="LightSkyBlue" Text="PunctPornire" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextDestinatie" Left="280" Width="180" Height="24.0" Fill.Color="LightSkyBlue" Text="Destinatie" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextNrRezervari" Left="460" Width="120" Height="24.0" Fill.Color="LightSkyBlue" Text="NrRezervari" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextOra" Left="580" Width="120" Height="24.0" Fill.Color="LightSkyBlue" Text="Ora" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="24.0" EvenStyle="EvenRows" DataSource="CeleMaiSolicitateCurse">
+      <TextObject Name="DataIDTraseu" Width="100" Height="24.0" Text="[CeleMaiSolicitateCurse.IDTraseu]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataPunctPornire" Left="100" Width="180" Height="24.0" Text="[CeleMaiSolicitateCurse.PunctPornire]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataDestinatie" Left="280" Width="180" Height="24.0" Text="[CeleMaiSolicitateCurse.Destinatie]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataNrRezervari" Left="460" Width="120" Height="24.0" Text="[CeleMaiSolicitateCurse.NrRezervari]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataOra" Left="580" Width="120" Height="24.0" Text="[CeleMaiSolicitateCurse.Ora]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="100" Width="718.2" Height="18.9">
+      <TextObject Name="TextPageNumber" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

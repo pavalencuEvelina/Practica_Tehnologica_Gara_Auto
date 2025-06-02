@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Harta Traseu</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <style>
+        /* Face harta să ocupe tot spațiul */
+        html, body, #map {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container-ul hărții -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    
+    <script>
+
+        var map = L.map('map').setView([47.0, 28.8], 8);
+
+        // Layer-ul de bază OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Variabile pentru traseu (polyline) și marker-ele curselor
+        var routeLayer = null;
+        var cursaMarkers = [];
+
+        // Funcție apelată din C#: traseu e un array de obiecte {lat, lon}
+        var routingControl;
+
+        window.drawRoute = function (traseu) {
+            // șterge traseul anterior
+            if (routingControl) map.removeControl(routingControl);
+
+            // creează array de L.Routing.waypoint
+            var waypoints = traseu.map(p => L.latLng(p.lat, p.lon));
+
+            routingControl = L.Routing.control({
+                waypoints: waypoints,
+                router: L.Routing.osrmv1({
+                    serviceUrl: 'https://router.project-osrm.org/route/v1'
+                }),
+                lineOptions: {
+                    styles: [{ color: 'blue', weight: 5 }]
+                },
+                createMarker: () => null,   // dacă nu vrei markere default
+                fitSelectedRoutes: true,
+                showAlternatives: false
+            }).addTo(map);
+        };
+        // Funcție apelată din C#: curse e un array de obiecte {id, dataPlecare, latStart, lonStart}
+        window.showCurse = function (curse) {
+            // Șterge marker-ele anterioare
+            cursaMarkers.forEach(function (m) {
+                map.removeLayer(m);
+            });
+            cursaMarkers = [];
+
+            // Pentru fiecare cursă, adaugă un marker la coordonata de start
+            curse.forEach(function (c) {
+                var marker = L.marker([c.latStart, c.lonStart])
+                    .bindPopup(
+                        'Cursa #' + c.id +
+                        '<br>Pleacă: ' + new Date(c.dataPlecare).toLocaleString()
+                    );
+                marker.addTo(map);
+                cursaMarkers.push(marker);
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="WindowsFile\AdaugaBilet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\AdaugareCursa.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\AddUserAngajat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\Angajati.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\Curse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\ModificareUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\Modificare_angajat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\RaportPasageriLunaAn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\SelecteazaCursa.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\StergereCurse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\StergeUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\TipTransport.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\Trasee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\TraseuAPI.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\UserControl1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\VeziBiletele.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\WindowAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\WindowAngajat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\WindowClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowsFile\WindowInregistrare.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

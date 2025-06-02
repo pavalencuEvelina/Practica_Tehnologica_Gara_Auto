@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/02/2025 10:00:00" ReportInfo.Modified="06/02/2025 06:50:31" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Default">
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary/>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Title" Width="718.2" Height="37.8" Text="Curse ce trec prin localitate" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="20">
+      <TextObject Name="Header1" Width="100" Height="20" Text="IDCursa" Font="Arial, 10pt" Style="Header"/>
+      <TextObject Name="Header2" Left="100" Width="100" Height="20" Text="DataPlecare" Font="Arial, 10pt" Style="Header"/>
+      <TextObject Name="Header3" Left="200" Width="100" Height="20" Text="OraPlecare" Font="Arial, 10pt" Style="Header"/>
+      <TextObject Name="Header4" Left="300" Width="120" Height="20" Text="TipTransport" Font="Arial, 10pt" Style="Header"/>
+      <TextObject Name="Header5" Left="420" Width="120" Height="20" Text="Pornire" Font="Arial, 10pt" Style="Header"/>
+      <TextObject Name="Header6" Left="540" Width="120" Height="20" Text="Destinatie" Font="Arial, 10pt" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="65.8" Width="718.2" Height="29.45">
+      <TextObject Name="Data1" Width="100" Height="29.45" Text="[CurseLocalitate.IDCursa]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Data2" Left="100" Width="100" Height="29.45" Text="[CurseLocalitate.DataPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Data3" Left="200" Width="100" Height="29.45" Text="[CurseLocalitate.OraPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Data4" Left="300" Width="120" Height="29.45" Text="[CurseLocalitate.TipTransport]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Data5" Left="420" Width="120" Height="29.45" Text="[CurseLocalitate.Localitate_Pornire]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Data6" Left="540" Width="120" Height="29.45" Text="[CurseLocalitate.Localitate_Destinatie]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+  </ReportPage>
+</Report>

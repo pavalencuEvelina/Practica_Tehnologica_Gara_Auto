@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/01/2025 18:00:00" ReportInfo.Modified="06/01/2025 18:00:00" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="ListaPasageri" ReferenceName="ListaPasageri" DataType="System.Data.DataTable" Enabled="true">
+      <Column Name="IDPasager" DataType="System.Int32"/>
+      <Column Name="Nume" DataType="System.String"/>
+      <Column Name="Prenume" DataType="System.String"/>
+      <Column Name="Nr_loc" DataType="System.Int32"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="TextTitle" Width="718.2" Height="37.8" Dock="Fill" Text="Lista Pasageri Cursa" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="24.0">
+      <TextObject Name="TextIDPasager" Width="100" Height="24.0" Fill.Color="LightSkyBlue" Text="IDPasager" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextNume" Left="100" Width="200" Height="24.0" Fill.Color="LightSkyBlue" Text="Nume" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextPrenume" Left="300" Width="200" Height="24.0" Fill.Color="LightSkyBlue" Text="Prenume" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextNrLoc" Left="500" Width="100" Height="24.0" Fill.Color="LightSkyBlue" Text="Nr_loc" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="24.0" EvenStyle="EvenRows" DataSource="ListaPasageri">
+      <TextObject Name="DataIDPasager" Width="100" Height="24.0" Text="[ListaPasageri.IDPasager]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataNume" Left="100" Width="200" Height="24.0" Text="[ListaPasageri.Nume]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataPrenume" Left="300" Width="200" Height="24.0" Text="[ListaPasageri.Prenume]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataNrLoc" Left="500" Width="100" Height="24.0" Text="[ListaPasageri.Nr_loc]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="100" Width="718.2" Height="18.9">
+      <TextObject Name="TextPageNumber" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

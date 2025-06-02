@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Practica_Gara_Auto.WindowsFile.Trasee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Practica_Gara_Auto.WindowsFile"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             MinWidth="0" MinHeight="0"
+            >
+    <Grid Margin="5">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+           
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+            <TextBlock Text="Localitate Pornire:" VerticalAlignment="Center" FontSize="16"/>
+            <Border Background="#F1F1F1" CornerRadius="8" Padding="10" Margin="30,0,120,0">
+                <ComboBox x:Name="SearchLocalitatePornire"
+                  Width="150"
+                        
+                  FontSize="14"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  VerticalContentAlignment="Center"
+                  SelectionChanged="SearchTextChanged"
+                  />
+            </Border>
+
+                
+            <TextBlock Text="Localitate Destinție:" VerticalAlignment="Center"  FontSize="16"/>
+
+            <Border Background="#F1F1F1" CornerRadius="8" Padding="10" Margin="30,0,0,0">
+                <ComboBox x:Name="SearchLocalitateDestinatie"
+      Width="150"
+            
+      FontSize="14"
+      Background="Transparent"
+      BorderThickness="0"
+      VerticalContentAlignment="Center"
+      SelectionChanged="SearchTextChanged"
+      />
+            </Border>
+
+
+        </StackPanel>
+        <!-- 📋 DataGrid -->
+        <Border Grid.Row="1" 
+       CornerRadius="8" 
+       Background="White" 
+       Padding="5"
+       SnapsToDevicePixels="True">
+            <DataGrid x:Name="DataGridTrasee"
+           AutoGenerateColumns="False"
+           CanUserAddRows="False"
+           CanUserResizeRows="False"
+           HeadersVisibility="Column"
+           GridLinesVisibility="None"
+                      IsReadOnly="True"
+           RowHeight="35"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+           ColumnHeaderHeight="40"
+           FontSize="14"
+           AlternatingRowBackground="#F9F9F9"
+           RowBackground="White"
+           SelectionMode="Single"
+           SelectionUnit="FullRow"
+           HorizontalGridLinesBrush="#EEE"
+           VerticalGridLinesBrush="#EEE">
+
+                <DataGrid.ColumnHeaderStyle>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#4D7779"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="BorderThickness" Value="0,0,1,1"/>
+                <Setter Property="BorderBrush" Value="#CCC"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+        </DataGrid.ColumnHeaderStyle>
+
+        <!-- Stil pentru celule -->
+        <DataGrid.CellStyle>
+            <Style TargetType="DataGridCell">
+                <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                <Setter Property="BorderBrush" Value="#EEE"/>
+                <Setter Property="Padding" Value="8,0"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="#C7E2E4"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </DataGrid.CellStyle>
+
+        <!-- Coloane definite manual (înlocuiește câmpurile cu cele din modelul tău) -->
+        <DataGrid.Columns>
+                    <DataGridTextColumn Header="IDTraseu" Binding="{Binding IDTraseu}" Width="*"/>
+                    <DataGridTextColumn Header="Localitate_Pornire" Binding="{Binding Localitate_Pornire}" Width="*"/>
+                    <DataGridTextColumn Header="Adresa_Pornire" Binding="{Binding Adresa_Pornire}" Width="*"/>
+                    <DataGridTextColumn Header="Localitate_Destinatie" Binding="{Binding Localitate_Destinatie}" Width="*"/>
+                    <DataGridTextColumn Header="Adresa_Destinatie" Binding="{Binding Adresa_Destinatie}" Width="*"/>
+            <DataGridTextColumn Header="km" Binding="{Binding km}" Width="*"/>
+           
+        </DataGrid.Columns>
+        </DataGrid>
+        </Border>
+
+    </Grid>
+</UserControl>

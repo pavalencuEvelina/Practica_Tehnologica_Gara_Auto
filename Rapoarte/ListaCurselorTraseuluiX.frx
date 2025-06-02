@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/01/2025 19:15:00" ReportInfo.Modified="06/01/2025 19:15:00" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="ListaCurse" ReferenceName="ListaCurse" DataType="System.Data.DataTable" Enabled="true">
+      <Column Name="IDCursa" DataType="System.Int32"/>
+      <Column Name="OraPlecare" DataType="System.String"/>
+      <Column Name="DataPlecare" DataType="System.String"/>
+      <Column Name="Localitate_Pornire" DataType="System.String"/>
+      <Column Name="Localitate_Destinatie" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="TextTitle" Width="718.2" Height="37.8" Dock="Fill" Text="Lista Curselor Traseului" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="24.0">
+      <TextObject Name="TextIDCursa" Width="80" Height="24.0" Fill.Color="LightSkyBlue" Text="IDCursa" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextOraPlecare" Left="80" Width="100" Height="24.0" Fill.Color="LightSkyBlue" Text="OraPlecare" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextDataPlecare" Left="180" Width="100" Height="24.0" Fill.Color="LightSkyBlue" Text="DataPlecare" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextLocalitatePornire" Left="280" Width="150" Height="24.0" Fill.Color="LightSkyBlue" Text="Pornire" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextLocalitateDestinatie" Left="430" Width="150" Height="24.0" Fill.Color="LightSkyBlue" Text="Destinatie" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="24.0" EvenStyle="EvenRows" DataSource="ListaCurse">
+      <TextObject Name="DataIDCursa" Width="80" Height="24.0" Text="[ListaCurse.IDCursa]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataOraPlecare" Left="80" Width="100" Height="24.0" Text="[ListaCurse.OraPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataDataPlecare" Left="180" Width="100" Height="24.0" Text="[ListaCurse.DataPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataLocalitatePornire" Left="280" Width="150" Height="24.0" Text="[ListaCurse.Localitate_Pornire]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataLocalitateDestinatie" Left="430" Width="150" Height="24.0" Text="[ListaCurse.Localitate_Destinatie]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="100" Width="718.2" Height="18.9">
+      <TextObject Name="TextPageNumber" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

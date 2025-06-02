@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Practica_Gara_Auto.WindowsFile.ListaCurseDestinatieZ"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             mc:Ignorable="d" 
+                         HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Rând pentru etichetă+ComboBox -->
+            <RowDefinition Height="*"/>
+            <!-- Rând pentru WebView2 -->
+        </Grid.RowDefinitions>
+
+        <!-- Rând 0: Text și ComboBox pe aceeași linie -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <!-- spațiu fix între text și combo -->
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"
+                       Text="Alege destinație"
+                       VerticalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="SemiBold"/>
+            <!-- Coloană de spațiu (10px) -->
+            <ComboBox Grid.Column="2"
+                      x:Name="ComboDestinatii"
+                      Width="200"
+                      Height="30"
+                      SelectionChanged="ComboDestinatii_SelectionChanged"
+                      Style="{StaticResource RoundedComboBoxStyle}"/>
+        </Grid>
+
+        <!-- Rând 1: WebView2 ocupă tot spațiul rămas -->
+        <wv2:WebView2 x:Name="webView"
+                      Grid.Row="1"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"/>
+    </Grid>
+</UserControl>

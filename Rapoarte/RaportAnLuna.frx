@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/31/2025 18:11:37" ReportInfo.Modified="05/31/2025 21:46:13" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <Parameter Name="Luna" DataType="System.String" AsString=""/>
+    <Parameter Name="An" DataType="System.String" AsString=""/>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="538.65" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" CanShrink="true" Text="Pasageri  [Luna] [An]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="18.9" CanShrink="true">
+      <TextObject Name="Text3" Width="179.55" Height="18.9" Fill.Color="LightSkyBlue" Text="IDPasager" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="179.55" Width="179.55" Height="18.9" Fill.Color="LightSkyBlue" Text="Nume" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="359.1" Width="179.55" Height="18.9" Fill.Color="LightSkyBlue" Text="Prenume" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="64.7" Width="718.2" Height="18.9" CanShrink="true" EvenStyle="EvenRows" RowCount="0">
+      <TextObject Name="Text2" Width="179.55" Height="18.9" Text="[Table.IDPasager]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="179.55" Width="179.55" Height="18.9" Text="[Table.Nume]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="359.1" Width="179.55" Height="18.9" Text="[Table.Prenume]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="87.6" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

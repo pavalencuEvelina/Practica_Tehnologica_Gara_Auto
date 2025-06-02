@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Practica_Gara_Auto.WindowsFile.Curse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Practica_Gara_Auto.WindowsFile"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             Loaded="UserControl_Loaded"
+VerticalAlignment="Stretch">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Text="Traseu:" VerticalAlignment="Center" FontSize="16"/>
+            <Border Background="#F1F1F1" CornerRadius="8" Padding="10" Margin="30,0,90,0">
+                <ComboBox x:Name="SearchTraseu"
+                          Width="150"
+                          FontSize="14"
+                          Background="Transparent"
+                          BorderThickness="0"
+                          VerticalContentAlignment="Center"
+                          SelectionChanged="SearchTextChanged"/>
+            </Border>
+
+            <TextBlock x:Name="textSofer" Text="Şofer:" VerticalAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
+            <Border Background="#F1F1F1" CornerRadius="8" Padding="10" Margin="30,0,0,0" x:Name="BorderText">
+                <ComboBox x:Name="SearchSofer"
+                          Width="150"
+                          FontSize="14"
+                          Background="Transparent"
+                          BorderThickness="0"
+                          VerticalContentAlignment="Center"
+                          SelectionChanged="SearchTextChanged"/>
+            </Border>
+
+            <Button x:Name="ExportToExcelButton"
+                    Content="Export to Excel"
+                    Click="ExportToExcel_Click"
+                    Width="100"
+                    Height="30"
+                    Margin="20,10,0,10"
+                    Style="{StaticResource RoundedButtonStyle}"
+                    Background="#FF4D7779"/>
+
+            <Button x:Name="ExportToWordButton"
+                    Content="Export to Word"
+                    Click="ExportToWord_Click"
+                    Width="100"
+                    Height="30"
+                    Margin="20,10,10,10"
+                    Style="{StaticResource RoundedButtonStyle}"
+                    Background="#FF4D7779"/>
+        </StackPanel>
+
+        <Border Grid.Row="1"
+                CornerRadius="8"
+                Background="White"
+                Padding="5"
+                SnapsToDevicePixels="True">
+            <DataGrid x:Name="DataGridTrasee"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserResizeRows="False"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      RowHeight="35"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      ColumnHeaderHeight="40"
+                      FontSize="14"
+                      IsReadOnly="True"
+                      AlternatingRowBackground="#F9F9F9"
+                      RowBackground="White"
+                      SelectionMode="Single"
+                      SelectionUnit="FullRow"
+                      HorizontalGridLinesBrush="#EEE"
+                      VerticalGridLinesBrush="#EEE">
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#4D7779"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,1"/>
+                        <Setter Property="BorderBrush" Value="#CCC"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                        <Setter Property="BorderBrush" Value="#EEE"/>
+                        <Setter Property="Padding" Value="8,0"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#C7E2E4"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="IDCursa" Binding="{Binding IDCursa}" Width="*"/>
+                    <DataGridTextColumn Header="Traseu" Binding="{Binding Traseu}" Width="*"/>
+                    <DataGridTextColumn Header="TipTransport" Binding="{Binding TipTransport}" Width="*"/>
+                    <DataGridTextColumn Header="Şofer" Binding="{Binding Sofer}" Width="*"/>
+                    <DataGridTextColumn Header="DataPlecare" Binding="{Binding DataPlecare}" Width="*"/>
+                    <DataGridTextColumn Header="OraPlecare" Binding="{Binding OraPlecare}" Width="*"/>
+                    <DataGridTextColumn Header="CapacitateTotala" Binding="{Binding CapacitateTotala}" Width="*"/>
+                    <DataGridTextColumn Header="LocuriOcupate" Binding="{Binding LocuriOcupate}" Width="*"/>
+                    <DataGridTextColumn Header="LocuriDisponibile" Binding="{Binding LocuriDisponibile}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ChatGPT Image 14 mai 2025, 07_59_59.png" />
+    <None Remove="WindowsFile\hide-password.png" />
+    <None Remove="WindowsFile\show-password-3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="DocX" Version="4.0.25105.5786" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
+    <PackageReference Include="FastReport.Data.MsSql" Version="2025.2.4" />
+    <PackageReference Include="FastReport.OpenSource" Version="2025.2.0" />
+    <PackageReference Include="FastReport.OpenSource.Data.MsSql" Version="2021.4.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2025.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1652.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3240.44" />
+    <PackageReference Include="Xceed.Words.NET" Version="5.0.25228.6154" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ChatGPT Image 14 mai 2025, 07_59_59.png" />
+    <Resource Include="WindowsFile\hide-password.png" />
+    <Resource Include="WindowsFile\show-password-3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Rapoarte\" />
+  </ItemGroup>
+
+</Project>

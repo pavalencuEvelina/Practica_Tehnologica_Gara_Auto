@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/01/2025 20:40:00" ReportInfo.Modified="06/02/2025 01:29:22" ReportInfo.CreatorVersion="2025.2.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="LocuriRezervate" ReferenceName="LocuriRezervate" DataType="System.Int32" Enabled="true">
+      <Column Name="IDCursa" DataType="System.Int32"/>
+      <Column Name="Nr_loc" DataType="System.Int32"/>
+      <Column Name="OraPlecare" DataType="System.String"/>
+      <Column Name="DataPlecare" DataType="System.String"/>
+      <Column Name="TipTransport" DataType="System.String"/>
+      <Column Name="Localitate_Pornire" DataType="System.String"/>
+      <Column Name="Localitate_Destinatie" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="66.15" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="TextTitle" Width="718.2" Height="37.8" Dock="Fill" Text="Locuri Rezervate - Cursa X" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="24">
+      <TextObject Name="TextIDCursa" Width="66.15" Height="24" Fill.Color="LightSkyBlue" Text="IDCursa" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextNrLoc" Left="60" Width="60" Height="24" Fill.Color="LightSkyBlue" Text="Nr_loc" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextOraPlecare" Left="120" Width="100" Height="24" Fill.Color="LightSkyBlue" Text="OraPlecare" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextDataPlecare" Left="220" Width="100" Height="24" Fill.Color="LightSkyBlue" Text="DataPlecare" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextTipTransport" Left="320" Width="120" Height="24" Fill.Color="LightSkyBlue" Text="TipTransport" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextLocalitatePornire" Left="440" Width="139.45" Height="24" Fill.Color="LightSkyBlue" Text="Pornire" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="TextLocalitateDestinatie" Left="579.45" Width="139.45" Height="24" Fill.Color="LightSkyBlue" Text="Destinatie" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="69.8" Width="718.2" Height="33.45" EvenStyle="EvenRows" DataSource="LocuriRezervate">
+      <TextObject Name="DataIDCursa" Width="60" Height="33.45" Text="[LocuriRezervate.IDCursa]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataNrLoc" Left="60" Width="60" Height="33.45" Text="[LocuriRezervate.Nr_loc]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataOraPlecare" Left="120" Width="100" Height="33.45" Text="[LocuriRezervate.OraPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataDataPlecare" Left="220" Width="100" Height="33.45" Text="[LocuriRezervate.DataPlecare]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataTipTransport" Left="320" Width="120" Height="33.45" Text="[LocuriRezervate.TipTransport]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataLocalitatePornire" Left="440" Width="139.45" Height="33.45" Text="[LocuriRezervate.Localitate_Pornire]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="DataLocalitateDestinatie" Left="579.45" Width="139.45" Height="33.45" Text="[LocuriRezervate.Localitate_Destinatie]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="107.25" Width="718.2" Height="28.35">
+      <TextObject Name="TextPageNumber" Width="718.2" Height="28.35" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

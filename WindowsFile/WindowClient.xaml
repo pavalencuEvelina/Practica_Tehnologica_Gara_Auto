@@ -1,0 +1,88 @@
+﻿<Window x:Class="Practica_Gara_Auto.WindowsFile.WindowClient"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Client - Gara Auto" Height="694" Width="1140"
+        WindowStartupLocation="CenterScreen"
+         SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <Storyboard x:Key="HideMeniu">
+            <DoubleAnimation Storyboard.TargetName="MeniuContainer"
+                         Storyboard.TargetProperty="Width"
+                         To="0" Duration="0:0:0.2"/>
+        </Storyboard>
+        <Storyboard x:Key="ShowMeniu">
+            <DoubleAnimation Storyboard.TargetName="MeniuContainer"
+                         Storyboard.TargetProperty="Width"
+                         To="200" Duration="0:0:0.2"/>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- Buton Toggle -->
+            <ColumnDefinition Width="Auto" />
+            <!-- Meniu -->
+            <ColumnDefinition Width="239*" />
+            <ColumnDefinition Width="41*"/>
+            <!-- Conținut principal -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Buton vizibil mereu -->
+        <StackPanel Grid.Column="0" Background="#FF4D7779">
+            <Button x:Name="BtnToggleMeniu"
+        Content="⇦"
+        Width="40"
+        Height="40"
+        Click="ToggleMeniu_Click" Background="#FFC7E2E4"/>
+        </StackPanel>
+        <!-- Meniu vertical -->
+        <Grid x:Name="MeniuContainer" Grid.Column="1" Background="#FFA1C5C7" Width="250">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="10,0,10,0" Height="714">
+                <Image HorizontalAlignment="Center" Height="97" VerticalAlignment="Top" Width="120" Source="/ChatGPT Image 14 mai 2025, 07_59_59.png" Stretch="Fill" Margin="0,-10,0,0"/>
+                    <TextBlock Text="➕ Adaugă" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Cumpără bilet" Margin="0,0,0,20" Click="BileteLunare_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+
+                <TextBlock Text="🔍 Căutare" FontWeight="Bold" Margin="0,0,0,10"/>
+                   
+                    <Button Cursor="Hand" Content="• Vezi Curse" Margin="0,0,0,5" Click="VeziCurse_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Vezi Biletele" Margin="0,0,0,5" Click="VeziBilete_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Vezi hartă trasee" Margin="0,0,0,20" Click="VeziHarta_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+
+
+                    <TextBlock Text="🧾 Rapoarte" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Locuri rezervatela cursa X" Margin="0,0,0,5" Click="LocuriRezervate_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Curse ce trec prin localitatea Y" Margin="0,0,0,5" Click="CurseLocalitate_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Curse ce aparțin destinației Z" Margin="0,0,0,20" Click="CurseDestinatie_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+
+
+
+                    <TextBlock Text="⚙️ Sistem" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Deconectare" Margin="0,0,0,5" Click="Deconectare_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Închide aplicația" Margin="0,0,0,20" Click="InchideAplicatia_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+
+
+                </StackPanel>
+                </ScrollViewer>
+        </Grid>
+
+
+
+           <ContentControl Grid.Column="2"
+    x:Name="MainContent"
+    Background="#FFC7E2E4" Grid.ColumnSpan="2">
+        <ContentControl.Template>
+            <ControlTemplate TargetType="ContentControl">
+                <Border Background="{TemplateBinding Background}"
+  Padding="{TemplateBinding Padding}">
+                    <ContentPresenter/>
+                </Border>
+            </ControlTemplate>
+        </ContentControl.Template>
+        <TextBlock Text="" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Salut"/>
+    </ContentControl>
+</Grid>
+
+
+</Window>

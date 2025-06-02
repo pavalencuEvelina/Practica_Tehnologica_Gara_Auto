@@ -1,0 +1,115 @@
+﻿<Window x:Class="Practica_Gara_Auto.WindowsFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Autentificare" Height="370" Width="400" WindowStartupLocation="CenterScreen" Background="#FFDBF7FB"  ResizeMode="NoResize">
+    <Grid Margin="20,10,20,10">
+        <Grid  HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Imagine -->
+            <RowDefinition Height="Auto"/>
+            <!-- Email -->
+            <RowDefinition Height="Auto"/>
+            <!-- Parolă -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buton -->
+            <RowDefinition Height="Auto"/>
+            <!-- Link -->
+        </Grid.RowDefinitions>
+
+        <!-- Imagine logo -->
+        <Image Grid.Row="0" HorizontalAlignment="Center" Height="85" Width="100"
+               Source="/ChatGPT Image 14 mai 2025, 07_59_59.png" Margin="0,0,0,0" Stretch="Fill"/>
+
+
+        <!-- Email -->
+        <StackPanel Grid.Row="1" Margin="0,5,0,0" HorizontalAlignment="Center">
+            <TextBlock Text="Email" FontWeight="Bold" Margin="0,0,0,5"/>
+            <Grid Width="250" Height="30">
+                <TextBox x:Name="txtEmail" TextChanged="txtEmail_TextChanged"
+                 BorderBrush="#FF4DB8EF"
+                 VerticalContentAlignment="Center"
+                  Style="{StaticResource RoundedTextBoxStyle}" Background="White"/>
+                <TextBlock x:Name="txtEmailPlaceholder" Text="mail@gmail.com"
+                   Foreground="Gray" Margin="5,0,0,0"
+                   VerticalAlignment="Center"
+                    IsHitTestVisible="False"
+                   Visibility="Visible"/>
+            </Grid>
+        </StackPanel>
+
+
+        <!-- Parolă -->
+        <!-- Parolă -->
+        <Grid Grid.Row="2" Margin="0,10,0,55" HorizontalAlignment="Center" Grid.RowSpan="2" Width="251">
+            <TextBlock Text="Parolă" FontWeight="Bold" Margin="0,0,0,5"/>
+
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- PasswordBox -->
+                <PasswordBox x:Name="txtParolaHidden"
+                     Style="{StaticResource RoundedPasswordBoxStyle}"
+                     PasswordChanged="txtParolaHidden_PasswordChanged"
+                     VerticalAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Height="30" Width="250"
+                     BorderBrush="#FF4DB8EF"
+                     Background="White"
+                     Grid.Column="0"/>
+
+                <!-- Placeholder -->
+                <TextBlock x:Name="placeholderText"
+                   Text="Introdu parola..."
+                   Foreground="Gray"
+                   Margin="10,0,0,0"
+                   VerticalAlignment="Center"
+                   IsHitTestVisible="False"
+                   Visibility="Visible"
+                   Grid.Column="0"/>
+
+                <!-- TextBox (vizibil când e cu ochi deschis) -->
+                <TextBox x:Name="txtParolaVisible"
+                 Height="30" Width="250"
+                 TextChanged="txtParolaVisible_TextChanged"
+                 VerticalAlignment="Center"
+                 Visibility="Collapsed"
+                 Grid.Column="0"/>
+
+                <!-- Ochiul -->
+                    <Button x:Name="btnTogglePassword"
+
+                    Width="25" Height="25"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,5,0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="BtnTogglePassword_Click">
+                                            <Image x:Name="imgEye"
+                       Width="21" Height="21"
+                       Source="/WindowsFile/hide-password.png"/>
+                    </Button>
+                </Grid>
+        </Grid>
+
+
+        <!-- Buton Autentificare -->
+        <Button Grid.Row="3" Content="Autentificare" Width="253" Height="30"
+                HorizontalAlignment="Center" Margin="0,45,0,0"
+                Style="{StaticResource RoundedButtonStyle}"
+                Click="BtnAutentificare_Click" Background="#FF4DB8EF"
+                Cursor="Hand"/>
+
+        <!-- Link Înregistrare -->
+        <TextBlock Grid.Row="4" Margin="0,10,0,0" HorizontalAlignment="Center">
+            <Run Text="Nu ai cont? " />
+            <Hyperlink Click="Inregistrare_Click"
+                       Cursor="Hand">Înregistrează-te aici</Hyperlink>
+        </TextBlock>
+    </Grid>
+    </Grid>
+</Window>

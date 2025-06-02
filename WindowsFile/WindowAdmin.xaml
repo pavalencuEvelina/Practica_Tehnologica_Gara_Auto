@@ -1,0 +1,102 @@
+﻿<Window x:Class="Practica_Gara_Auto.WindowsFile.WindowAdmin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Admin - Gara Auto" Height="694" Width="1140"
+    WindowStartupLocation="CenterScreen"
+     SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <Storyboard x:Key="HideMeniu">
+            <DoubleAnimation Storyboard.TargetName="MeniuContainer"
+                     Storyboard.TargetProperty="Width"
+                     To="0" Duration="0:0:0.2"/>
+        </Storyboard>
+        <Storyboard x:Key="ShowMeniu">
+            <DoubleAnimation Storyboard.TargetName="MeniuContainer"
+                     Storyboard.TargetProperty="Width"
+                     To="200" Duration="0:0:0.2"/>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- Buton Toggle -->
+            <ColumnDefinition Width="Auto" />
+            <!-- Meniu -->
+            <ColumnDefinition Width="*" />
+            <!-- Conținut principal -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Buton vizibil mereu -->
+        <StackPanel Grid.Column="0" Background="#FF4D7779">
+            <Button x:Name="BtnToggleMeniu"
+    Content="⇦"
+    Width="40"
+    Height="40"
+    Click="ToggleMeniu_Click" Background="#FFC7E2E4"/>
+        </StackPanel>
+        <!-- Meniu vertical -->
+        <Grid x:Name="MeniuContainer" Grid.Column="1" Background="#FFA1C5C7" Width="280">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel  Margin="10,0,10,10" Height="929">
+                    <Image Height="97" Width="120" Source="/ChatGPT Image 14 mai 2025, 07_59_59.png" Stretch="Fill"/>
+                    <TextBlock Text="➕ Adăugare" FontWeight="Bold" Margin="0,0,0,10" />
+                    <Button Cursor="Hand" Content="• Adăugare angajat" Margin="0,0,0,5" Click="AdaugareAngajat_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Adăugare cont angajat" Margin="0,0,0,20" Click="AdaugareContAngajat_Click" Background="#FF4D7779" Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <TextBlock Text="🔍 Căutare" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Angajați" Margin="0,0,0,5" Click="CautaAngajati_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Content="• Tip transport și capacitate" Cursor="Hand" Margin="0,0,0,20" Click="TipTransport_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <TextBlock Text="✏️ Modificare" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Modificare Angajat" Margin="0,0,0,5" Click="ModificareAngajati_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Modificare User" Margin="0,0,0,20" Click="ModificareUser_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+
+
+                    <TextBlock Text="✖ Ștergere" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Șterge user" Margin="0,0,0,20" Click="ȘtergeUser_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <TextBlock Text="🧾 Rapoarte" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• Lista pasageri luna L anul A" Margin="0,0,0,5" Click="PasageriLunaAn_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Cursor="Hand" Content="• Cele mai solicitate curse" Margin="0,0,0,20" Click="CurseSolicitate_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+
+                    <TextBlock Text="💾 BackUp" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Cursor="Hand" Content="• BackUp" Margin="0,0,0,20" Click="BtnBackup_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                   
+                    <TextBlock Text="⚙️ Sistem" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Content="• Deconectare" Cursor="Hand" Margin="0,0,0,5" Click="Deconectare_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                    <Button Content="• Închide aplicația" Cursor="Hand" Click="InchideAplicatia_Click" Background="#FF4D7779"  Style="{StaticResource RoundedButtonStyle}"/>
+                   
+
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </Grid>
+
+
+        <ContentControl Grid.Column="2"
+                x:Name="MainContent"
+                Background="#FFC7E2E4"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <ContentControl.Template>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border Background="{TemplateBinding Background}"
+              Padding="{TemplateBinding Padding}">
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </ContentControl.Template>
+
+            <!-- initial content -->
+            <TextBlock Text="Bun venit, Admin!" 
+             FontSize="30" 
+             FontWeight="Bold" 
+             HorizontalAlignment="Center" 
+             VerticalAlignment="Center"/>
+        </ContentControl>
+
+
+    </Grid>
+</Window>
