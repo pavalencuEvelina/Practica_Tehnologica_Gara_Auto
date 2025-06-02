@@ -10,7 +10,7 @@ namespace Practica_Gara_Auto.Connection
 {
     class DataBaseConnection : IDisposable
     {
-        private readonly string connectionString = @"Data Source=WIN-1JGE1PG7IQE;Initial Catalog=Gara_Auto;Integrated Security=True;TrustServerCertificate=True;";
+        private readonly string connectionString = @"Data Source=localhost;Initial Catalog=Gara_Auto;Integrated Security=True;TrustServerCertificate=True;";
         public SqlConnection Connection { get; private set; }
 
         public DataBaseConnection()

@@ -1,0 +1,49 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.vscode/
+
+# Visual Studio files
+.vs/
+
+# Rider files
+.idea/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Auto-generated files
+*.Generated.cs
+*.AssemblyInfo.cs
+
+# Other files
+*.cache
+*.log
+*.tmp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output
+*.exe
+*.dll
+*.app
+*.pdb
+
+# User secrets
+secrets.json
