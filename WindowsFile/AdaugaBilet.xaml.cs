@@ -69,7 +69,7 @@ namespace Practica_Gara_Auto.WindowsFile
                             OraPlecare
                         FROM Curse_Complet
                         WHERE DataPlecare >= CAST(GETDATE() AS DATE)
-                        ORDER BY DataPlecare, OraPlecare;
+                        ORDER BY IDCursa;
                                                                      ";
 
 
@@ -85,7 +85,7 @@ namespace Practica_Gara_Auto.WindowsFile
                                         + (TimeSpan)reader[4]; // OraPlecare
 
                         // Formatăm textul afișat în ComboBox
-                        string afisaj = $"{traseu} — {dt:dd.MM.yyyy HH:mm}";
+                        string afisaj = $"Cursa {idCursa} - Traseu {traseu} — {dt:dd.MM.yyyy HH:mm}";
 
                         listaCurse.Add(new CursaModel
                         {
